@@ -8,34 +8,35 @@ typedef struct node
   struct node* next;
 }node;
 
-node* create_node(int item)
-{
+//this function creates a new node
+
+node* createNode(int item){
+
 	node *temp = malloc(sizeof(node));
-	temp ->data = item;
-	temp ->next = NULL;
+	temp->data = item;
+	temp->next = NULL;
+
 	return temp;
 
+
 }
+
 
 //this function takes an item and insert it in the linked list pointed by root.
 node* insert_front(node* head, int item)
 {
- 
-	node *temp = create_node(item);
 
-	if (head = NULL)
-	{
-		head = temp;
-		return head;
-
-	}
-	else{
-		temp -> next = head;
-		return temp;
-		
-	}
-
+	node *temp = createNode(item);
 	
+	if (head == NULL)
+	{
+		return temp;
+	}
+
+	else
+	temp->next = head;
+	return temp;
+ 
 
 }
 
